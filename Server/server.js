@@ -10,16 +10,15 @@ app.use(cors());
 app.use(express.json());
 
 // ============ DATABASE CONNECTION ============
-// ⚠️ PASTE YOUR CONNECTION STRING BETWEEN THE QUOTES:
-const MONGODB_URI = 'mongodb+srv://enginezofficial_db_user:wpLUANCF7flaXObx@cluster0.i7zn1g0.mongodb.net/enginez?appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://enginezofficial_db_user:wpLUANCF7flaXObx@cluster0.i7zn1g0.mongodb.net/enginez?appName=Cluster0';
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('✅ Connected to MongoDB Atlas'))
     .catch(err => console.error('❌ MongoDB connection error:', err.message));
 
 // ============ EMAIL CONFIGURATION ============
-const EMAIL_USER = 'enginezofficial@gmail.com';
-const EMAIL_PASS = 'szaelnxupkundsqb';
+const EMAIL_USER = process.env.EMAIL_USER || 'enginezofficial@gmail.com';
+const EMAIL_PASS = process.env.EMAIL_PASS || 'szaelnxupkundsqb';
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
