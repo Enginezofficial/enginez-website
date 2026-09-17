@@ -51,3 +51,60 @@ ENGINEZ/
 ```bash
 git clone https://github.com/Enginezofficial/enginez-website.git
 cd enginez-website
+
+2. Install backend dependencies
+cd Server
+npm install
+
+3. Start the backend server
+npm start
+
+🎯 Usage
+For Customers
+Browse products on the Shop page
+
+Click any product for details, description, and reviews
+
+Add items to cart and proceed to checkout
+
+Fill in delivery info and place your order
+
+Track orders anytime via the profile menu
+
+For Admin
+Visit admin.html in your browser
+
+Log in with the admin password
+
+Manage orders (update status: Pending → Shipped → Delivered)
+
+Read and reply to customer messages
+
+View customer reviews
+
+🌐 Deployment
+Frontend: Deployed on Render as a Static Site
+
+Backend: Deployed on Render as a Web Service
+
+📸 Screenshots
+Home Page	Product Details	Admin Panel
+(coming soon)	(coming soon)	(coming soon)
+🤝 Contributing
+This is a personal e-commerce project for ENGINEZ. For any questions or collaboration, please reach out.
+
+📞 Contact
+Facebook: Enginez Official
+
+Instagram: @shop.enginez
+
+WhatsApp: +92 317 4011417
+
+Email: enginezofficial@gmail.com
+
+📄 License
+© 2024 ENGINEZ. All rights reserved.
+
+Drive Clean, Drive Proud.
+
+
