@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ENGINEZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="admin-login-screen">
+        <div class="admin-login-box">
+            <h1>ENGINEZ Admin</h1>
+            <p>Enter password to access dashboard</p>
+            <input type="password" id="admin-password" placeholder="Password" class="admin-input">
+            <button onclick="loginAdmin()" class="btn-primary" style="width:100%;">Login</button>
+            <p id="login-error" style="color:red; margin-top:1rem;"></p>
+        </div>
+    </div>
+
+    <!-- Dashboard (hidden by default) -->
+    <div id="dashboard-screen" style="display:none;">
+        <div class="admin-header">
+            <h1>ENGINEZ Dashboard</h1>
+            <button onclick="logoutAdmin()" class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </div>
+
+        <div class="admin-stats">
+            <div class="stat-card">
+                <i class="fa-solid fa-shopping-bag"></i>
+                <h3 id="stat-orders">0</h3>
+                <p>Total Orders</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3 id="stat-messages">0</h3>
+                <p>Messages</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h3 id="stat-revenue">Rs. 0</h3>
+                <p>Total Revenue</p>
+            </div>
+        </div>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" onclick="showTab('orders', event)">Orders</button>
+<button class="admin-tab" onclick="showTab('messages', event)">Messages</button>
+        </div>
+
+        <!-- Orders Tab -->
+        <div id="tab-orders" class="admin-content">
+            <div class="admin-actions">
+                <button onclick="loadAdminData()" class="btn-primary"><i class="fa-solid fa-rotate"></i> Refresh</button>
+            </div>
+            <div id="orders-table-container">
+                <p>Loading orders...</p>
+            </div>
+        </div>
+
+        <!-- Messages Tab -->
+        <div id="tab-messages" class="admin-content" style="display:none;">
+            <div class="admin-actions">
+                <button onclick="loadAdminData()" class="btn-primary"><i class="fa-solid fa-rotate"></i> Refresh</button>
+            </div>
+            <div id="messages-list-container">
+                <p>Loading messages...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

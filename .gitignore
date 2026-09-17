@@ -1,0 +1,15 @@
+# Node modules (huge, don't upload)
+Server/node_modules/
+node_modules/
+
+# Environment files (secrets)
+.env
+Server/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ENGINEZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-navbar">
+        <div class="nav-left"><i class="fa-solid fa-magnifying-glass search-icon" onclick="toggleSearch()"></i></div>
+        <div class="nav-center">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ENGINEZ Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text-fallback" style="display:none;">ENGINEZ</span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <i class="fa-regular fa-user"></i>
+            <div class="cart-icon" onclick="toggleCart()"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></div>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">SHOP</a></li>
+            <li><a href="about.html" class="active">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-content">
+        <h1>About ENGINEZ</h1>
+        <p>Welcome to ENGINEZ, your premier destination for high-quality car care products. We are passionate about cars and dedicated to providing exceptional products that keep your vehicle looking showroom-ready.</p>
+        <p>Our mission is simple: <strong>Drive Clean, Drive Proud.</strong> We believe that maintaining your car's appearance shouldn't be a chore. That's why we've curated a selection of premium gloss finish protectants, microfiber towels, and detailing essentials that deliver professional results at affordable prices.</p>
+        <p>Whether you're a professional detailer or a car enthusiast, ENGINEZ has everything you need to protect your investment and turn heads on the road.</p>
+    </div>
+
+    <footer><div class="footer-bottom" style="max-width: 100%;"><p>&copy; 2024 ENGINEZ. All rights reserved.</p></div></footer>
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header"><h2>Your Cart</h2><i class="fa-solid fa-xmark" onclick="toggleCart()"></i></div>
+        <div class="cart-items" id="cart-items-container"><p class="empty-cart-msg">Your cart is empty.</p></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span id="cart-total-price">Rs. 0.00</span></div><button class="btn-primary" onclick="checkout()">Checkout</button></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

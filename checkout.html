@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | ENGINEZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <div class="nav-left"><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
+        <div class="nav-center">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ENGINEZ Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text-fallback" style="display:none;">ENGINEZ</span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <i class="fa-regular fa-user"></i>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">SHOP</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="breadcrumbs">
+        <a href="index.html">Home</a> <span>/</span> <a href="products.html">Shop</a> <span>/</span> <span>Checkout</span>
+    </div>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="checkout-wrapper">
+            
+            <!-- Left Side: Billing Details & Payment -->
+            <div class="checkout-box">
+                <h2>Billing Details</h2>
+                <form id="checkout-form">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="customerName" placeholder="Enter your full name" required>
+    </div>
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="03XX-XXXXXXX" required>
+    </div>
+    <div class="form-group">
+        <label>Complete Address</label>
+        <textarea name="address" placeholder="House #, Street, Area, City" required></textarea>
+    </div>
+    
+    <h2 style="margin-top: 2rem;">Payment Method</h2>
+    <div class="payment-methods">
+        <label class="payment-option">
+            <input type="radio" name="payment" value="cod" checked>
+            <span>Cash on Delivery (COD)</span>
+        </label>
+        <label class="payment-option">
+            <input type="radio" name="payment" value="bank">
+            <span>Direct Bank Transfer</span>
+        </label>
+        <label class="payment-option">
+            <input type="radio" name="payment" value="card">
+            <span>Credit / Debit Card (Coming Soon)</span>
+        </label>
+    </div>
+</form>
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <div class="order-summary">
+                <h2>Your Order</h2>
+                <div id="checkout-summary-items" style="margin-top: 1.5rem;">
+                    <p>Loading order summary...</p>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="checkout-total-price">Rs. 0.00</span>
+                </div>
+                <!-- This button submits the form above -->
+                <button type="button" onclick="placeOrder(event)" class="btn-place-order">Place Order</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom" style="max-width: 100%;">
+            <p>&copy; 2024 ENGINEZ. All rights reserved.</p>
+            <div class="social-icons">
+    <a href="https://www.facebook.com/Enginezofficial" target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/shop.enginez" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
+    </footer>
+
+    <!-- Cart Drawer (Required for consistency) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header"><h2>Your Cart</h2><i class="fa-solid fa-xmark" onclick="toggleCart()"></i></div>
+        <div class="cart-items" id="cart-items-container"><p class="empty-cart-msg">Your cart is empty.</p></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cart-total-price">Rs. 0.00</span></div>
+            <button class="btn-primary" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
